@@ -1,5 +1,26 @@
 .App {
   text-align: center;
+  overflow-x: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+body::-webkit-scrollbar:vertical {
+  width:10px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 90%, 65%);
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
 }
 
 .App-logo {
