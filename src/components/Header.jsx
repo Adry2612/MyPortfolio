@@ -29,14 +29,14 @@ export default function Header() {
                 <img src={logo} alt="" />
             </Logo>
 
-            <i class="fa-solid fa-bars" onClick={activeMenu} id="menuIcon"></i>
+            <i className="fa-solid fa-bars" onClick={activeMenu} id="menuIcon"></i>
 
             <Links id="menu">
                 <Link to="presentation" spy={true} offset={0} smooth={true} duration={0} onClick={closeMenu}> Presentación </Link>
                 <Link to="about" spy={true} offset={-100} smooth={true} duration={0} onClick={closeMenu}> Sobre mi</Link>
                 <Link to="proyects" spy={true} offset={-100} smooth={true} duration={0} onClick={closeMenu}> Proyectos</Link>
                 <Link to="tecnologies" spy={true} offset={-100  } smooth={true} duration={0} onClick={closeMenu}> Tecnologías </Link> 
-                <i class="fa-solid fa-xmark" id="close" onClick={closeMenu}></i>
+                <i className="fa-solid fa-xmark" id="close" onClick={closeMenu}></i>
             </Links>
         </HeaderWrapper>
     )
@@ -45,7 +45,7 @@ export default function Header() {
 const HeaderWrapper = styled.div`
     width: 100vw;
     height: 10vh;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
         0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
         0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
@@ -56,6 +56,8 @@ const HeaderWrapper = styled.div`
     align-items: center;
     position: fixed;
     top: 0;
+    backdrop-filter: blur(12px);
+    z-index: 5000;
 
     & > i{
         display: none;

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import image from '../assets/photo.jpeg';
+import image from '../assets/photo.jpg';
 export default function Presentation() {
   return (
     <Content id="presentation">

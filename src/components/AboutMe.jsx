@@ -114,9 +114,11 @@ const Presentation = styled.div`
     margin-bottom: 2rem;
 
     & > .title{
-        color: black;
-        font-size: 2.4rem;
-        font-weight: bold;
+  font-size: 8.3rem;
+  color: hsl(0, 90%, 65%);
+  opacity: 0.7;
+  font-family: 'Grape Nuts', cursive;
+  font-weight: bold;
     }
 
     & > .decoration{

@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <FooterWrapper>
         <span> © 2021 Adrián Vidal López </span>
-        <div class="social">
+        <div className="social">
             <a href="https://github.com/Adry2612">
                 <img src={github} alt="Github" />
             </a>
