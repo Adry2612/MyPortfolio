@@ -1,18 +1,17 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 
-import geotap from '../assets/work/geotap.svg';
-import botet from '../assets/work/logo.svg';
+import Experience from './Experience';
 
 export default function AboutMe() {
-    // const [educations, setEducations] = useState([]);    
+    const [educations, setEducations] = useState([]);    
     const [jobs, setJobs] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // fetch("https://adrian-vidal-portfolio-api.herokuapp.com/api/education")
-        //     .then(res => res.json())
-        //     .then(data => setEducations(data))
+        fetch("https://adrian-vidal-portfolio-api.herokuapp.com/api/education")
+            .then(res => res.json())
+            .then(data => setEducations(data))
 
         fetch("https://adrian-vidal-portfolio-api.herokuapp.com/api/jobs")
             .then(res => res.json())
@@ -41,27 +40,22 @@ export default function AboutMe() {
                 </span>
                 <span className="decoration"> </span>
 
-                {isLoading ? 
-                <p> Mal </p>
-                :
-                jobs.map((job) => (
-                    <Card>
-                        <img src={geotap} alt="" />
-
-                        <div className="content">
-                            <span> <p className="name"> {job.name} </p> <p className="date"> {job.startDate} - {job.endDate} </p> </span>
-
-                            <p className="spendWork"> {job.description} </p>
-                            <ul>
-                                <li> Flutter </li>
-                                <li> Python </li>
-                                <li> ColdFusion </li>
-                                <li> Angular </li>
-                            </ul>
-                        </div>
-                    </Card>
-
-                ))}
+                { isLoading 
+                    ?  <p> Mal </p>
+                    : jobs.map((job) => (
+                        <Experience
+                            type="job" 
+                            name={job.name}
+                            icon={job.icon}
+                            startDate={job.startDate}
+                            endDate={job.endDate}
+                            description={job.description}
+                            tecnologies={job.tecnologies}
+                        />
+   
+                    ))
+                }
+                    
             </ExperienceBox>
 
             <ExperienceBox className='Education'>
@@ -73,25 +67,21 @@ export default function AboutMe() {
                 </span>
                 <span className="decoration"> </span>
 
-                <Card>
-                    <img src={botet} alt="" />
+                { isLoading 
+                    ?  <p> Mal </p>
+                    : educations.map((education) => (
+                        <Experience
+                            type="education" 
+                            name={education.name}
+                            icon={education.icon}
+                            startDate={education.startDate}
+                            endDate={education.endDate}
+                            description={education.description}
+                            tecnologies=''
+                        />
 
-                    <div className="content">
-                        <span> <p className="name"> IES José Rodrigo Botet </p> <p className="date"> Septiembre 2018 - Junio 2021 </p> </span>
-
-                        <p className="spendWork"> Tecnico en Desarrollo de Aplicaciones Web </p>
-                    </div>
-                </Card>
-
-                <Card>
-                    <img src={botet} alt="" />
-
-                    <div className="content">
-                        <span> <p className="name"> IES José Rodrigo Botet </p> <p className="date"> Septiembre 2016 - Junio 2018 </p> </span>
-
-                        <p className="spendWork"> Tecnico en Sistemas Microinformartícos y Redes </p>
-                    </div>
-                </Card>
+                    ))
+                }  
             </ExperienceBox>
         </Content>
     </AboutMeContainer>
@@ -113,11 +103,11 @@ const Presentation = styled.div`
     margin-bottom: 2rem;
 
     & > .title{
-  font-size: 8.3rem;
-  color: hsl(0, 90%, 65%);
-  opacity: 0.7;
-  font-family: 'Grape Nuts', cursive;
-  font-weight: bold;
+        font-size: 8.3rem;
+        color: hsl(0, 90%, 65%);
+        opacity: 0.7;
+        font-family: 'Grape Nuts', cursive;
+        font-weight: bold;
     }
 
     & > .decoration{
@@ -169,107 +159,12 @@ const Content = styled.div`
         align-self: flex-start;
         z-index: -3;
     }
-
-    @media screen and (max-width: 1050px){
-
-    }   
 `
-const Card = styled.div`
-    width: 60%;
-    margin-top: 2rem;
-    background-color: #fff;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    border: 1px solid #EDF2F7;
-    border-radius: 5px;
-    color: #616161;
 
-    & > img{
-        width: 6rem;
-        height: 6rem;
-        margin: 0 2rem 0 1rem;
-    }
-
-    & > .content{
-        display: flex;
-        flex-direction: column;
-
-        & > span{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content:center;
-            gap: 6rem;
-            font-size: 1rem;
-
-            & > .name{
-                color: hsl(0, 90%, 65%);
-                font-size: 1.6rem;
-                text-align: left;
-            }
-        }
-
-        & > ul {
-            display: flex;
-            justify-content: space-evenly;
-            list-style-type: none;
-
-            & > li{
-                padding: 0.3rem;
-                color: white;
-                background-color: hsl(0, 90%, 65%);
-                border-radius: 5px;
-                margin-left: 5px;
-            }
-        }
-
-        & > .spendWork{
-            font-size: 1rem;
-            align-self: flex-start;
-            justify-self: flex-start;
-            margin-top: -1rem;
-        }
-    }
-    
-    @media screen and (max-width: 1050px){
-        width: 80%;
-        padding: 1rem;
-
-        & > img{
-            width: 4rem;
-            height: 4rem;
-            margin: 0 2rem 0 1rem;
-        }
-
-        & > .content{
-            & > span{
-                gap: 1rem;
-                font-size: 1rem;
-            }
-
-            & > ul{
-                display: flex;
-                justify-content: space-evenly;
-                flex-flow: row wrap;
-                gap: 0.5rem;
-
-                & > li{
-                    padding: 0.3rem;
-                    color: white;
-                    background-color: hsl(0, 90%, 65%);
-                    border-radius: 5px;
-                }
-            }
-        }
-    }
-    
-`
 
 const ExperienceBox = styled.div`
     width: 80vw;
-    margin-bottom: 2rem;
+    margin: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

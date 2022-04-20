@@ -98,7 +98,8 @@ export default function Tecnologies() {
               description={tecno.description} 
               learned={tecno.state} 
               category={tecno.category} 
-              icon={tecno.icon}  /> 
+              icon={tecno.icon}  
+            /> 
           )
         )
       }
@@ -167,6 +168,7 @@ const ControlButtons = styled.div`
       height: 2rem;
       border: none;
       border-radius: 5px;
+      margin: 8px;
       display: flex;
       justify-content: center;
       align-items: center;
