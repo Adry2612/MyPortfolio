@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import image from '../assets/photo.jpg';
+
 export default function Presentation() {
   return (
     <Content id="presentation">
@@ -14,12 +15,12 @@ export default function Presentation() {
             <br />
 
             <Hi>
-                Me llamo <span className='myName'> Adrián Vidal </span> y soy un desarrollador web junior y amante de la
-                tecnología ubicado en Valencia <span className='country'> ES </span> .
+                Me llamo <span className='myName'> Adrián Vidal </span> y soy un desarrollador web junior amante de la
+                tecnología que actualmente vive en Valencia <span className='country'> ES </span> .
             </Hi>
 
             <Hi>
-                Este es mi portfolio, el lugar donde escribo acerca de mis proyectos y
+                Este es mi portfolio, el lugar donde puedes echar un vistazo a mis proyectos y
                 las cosas que he aprendido. 😀
             </Hi>
 
@@ -50,7 +51,7 @@ export default function Presentation() {
 
 const Content = styled.div`
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

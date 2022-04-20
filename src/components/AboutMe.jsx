@@ -27,7 +27,7 @@ export default function AboutMe() {
             <span className="title"> Sobre mi </span>
             <span className="decoration"> </span>
 
-            <p> Tengo 22 años y soy amante del desarrollo web, el diseño y la seguridad informática. Aunque con poca trayectoria profesional, mi objetivo es no parar de aprender y ser un mejor desarrollador.</p>
+            <p> Tengo 23 años y soy amante del desarrollo web, el diseño y la seguridad informática. Aunque con poca trayectoria profesional, mi objetivo es no parar de aprender y ser un mejor desarrollador.</p>
         </Presentation>
 
         <Content>
@@ -100,7 +100,6 @@ export default function AboutMe() {
 
 const AboutMeContainer = styled.div`
     width: 100vw;
-    margin-top: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -32,10 +32,10 @@ export default function Header() {
             <i className="fa-solid fa-bars" onClick={activeMenu} id="menuIcon"></i>
 
             <Links id="menu">
-                <Link to="presentation" spy={true} offset={0} smooth={true} duration={0} onClick={closeMenu}> Presentación </Link>
-                <Link to="about" spy={true} offset={-100} smooth={true} duration={0} onClick={closeMenu}> Sobre mi</Link>
-                <Link to="proyects" spy={true} offset={-100} smooth={true} duration={0} onClick={closeMenu}> Proyectos</Link>
-                <Link to="tecnologies" spy={true} offset={-100  } smooth={true} duration={0} onClick={closeMenu}> Tecnologías </Link> 
+                <Link to="presentation" spy={true} offset={-80} smooth={true} duration={0} onClick={closeMenu}> Presentación </Link>
+                <Link to="about" spy={true} offset={-80} smooth={true} duration={0} onClick={closeMenu}> Sobre mi</Link>
+                <Link to="proyects" spy={true} offset={-80} smooth={true} duration={0} onClick={closeMenu}> Proyectos</Link>
+                <Link to="tecnologies" spy={true} offset={-80} smooth={true} duration={0} onClick={closeMenu}> Tecnologías </Link> 
                 <i className="fa-solid fa-xmark" id="close" onClick={closeMenu}></i>
             </Links>
         </HeaderWrapper>
@@ -57,7 +57,7 @@ const HeaderWrapper = styled.div`
     position: fixed;
     top: 0;
     backdrop-filter: blur(12px);
-    z-index: 5000;
+    z-index: 9999;
 
     & > i{
         display: none;

@@ -50,12 +50,12 @@ export default function Tecnologies() {
   
   return (
     <TecnologiesContainer id="tecnologies">
-         <TecnologiesPresentation>
+         <Presentation>
             <span className="title"> Tecnologías </span>
             <span className="decoration"> </span>
 
             <p> Una lista de todas mis tecnologías favoritas y con las que suelo trabajar. También se pueden ver las que estoy aprendiendo actualmente. </p>
-        </TecnologiesPresentation>
+        </Presentation>
 
     <ControlButtons>
       <button id="all" className="selected" onClick={selectCategory}>
@@ -115,7 +115,8 @@ const TecnologiesContainer = styled.div`
     align-items: center;
     min-height: 60vh;
 `;
-const TecnologiesPresentation = styled.div`
+
+const Presentation = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -123,33 +124,36 @@ const TecnologiesPresentation = styled.div`
     margin-bottom: 2rem;
 
     & > .title{
-      color: black;
-      font-size: 2.4rem;
-      font-weight: bold;
+  font-size: 8.3rem;
+  color: hsl(0, 90%, 65%);
+  opacity: 0.7;
+  font-family: 'Grape Nuts', cursive;
+  font-weight: bold;
     }
 
     & > .decoration{
-      background-color: #616161;
-      height: 1px;
-      opacity: 0.2;
-      margin-top: 5px;
-      width: 220px;
-      z-index: -1;
+        background-color: #616161;
+        height: 1px;
+        opacity: 0.2;
+        margin-top: 5px;
+        width: 160px;
+        z-index: -1;
     }
 
     & > p{
-      width: 80%;
-      color: hsl(216, 15%, 52%);
-      font-size: 1.4rem;
-      line-height: 2.4rem;
+        width: 80%;
+        color: hsl(216, 15%, 52%);
+        font-size: 1.4rem;
+        line-height: 2.3rem;
     }
 
     @media screen and (max-width: 1050px){
-      & > p{
-        font-size: 1.2rem;
-      }
+        & > p{
+            font-size: 1.2rem;
+            line-height: 2.4rem;
+        }
     }
-`;
+`
 const ControlButtons = styled.div`
     width: 60%;
     display: flex;
