@@ -23,8 +23,7 @@ export default function Experience({type, name, icon, startDate, endDate, descri
                             
                     ) 
                     : ''
-                }
-            
+                } 
             </div>
         </Card>
     )
@@ -110,6 +109,39 @@ const Card = styled.div`
                 justify-content: space-evenly;
                 flex-flow: row wrap;
                 gap: 0.5rem;
+
+                & > li{
+                    padding: 0.3rem;
+                    color: white;
+                    background-color: hsl(0, 90%, 65%);
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 500px){
+        width: 80vw;
+        padding: 1rem;
+        flex-direction: column;
+
+        & > img{
+            width: 4rem;
+            height: 4rem;
+            margin: 0 2rem 0 1rem;
+        }
+
+        & > .content{
+            & > span{
+                gap: 1rem;
+                font-size: 1rem;
+            }
+
+            & > ul{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0;
 
                 & > li{
                     padding: 0.3rem;

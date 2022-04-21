@@ -8,15 +8,15 @@ export default function Header() {
 
     function activeMenu(e){
         const menu = document.querySelector('#menu');
-        menu.classList.add('active')
+        menu.classList.toggle('active')
 
-        const icon = document.querySelector('#close');
-        icon.classList.add('active');
+        const icon = document.querySelector('#menuIcon');
+        icon.classList.toggle('active');
     }
 
     function closeMenu(e){
-        const closeIcon = document.querySelector('#close');
-        closeIcon.classList.add('active');
+        const icon = document.querySelector('#menuIcon');
+        icon.classList.toggle('active');
 
         const menu = document.querySelector('#menu');
         menu.classList.remove('active')
@@ -26,17 +26,21 @@ export default function Header() {
     return (
         <HeaderWrapper>
             <Logo>
-                <img src={logo} alt="" />
+                <img src={logo} alt="Logo de Adrián" />
             </Logo>
 
-            <i className="fa-solid fa-bars" onClick={activeMenu} id="menuIcon"></i>
+            <div id="menuIcon" onClick={activeMenu}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
             <Links id="menu">
                 <Link to="presentation" spy={true} offset={-80} smooth={true} duration={0} onClick={closeMenu}> Presentación </Link>
                 <Link to="about" spy={true} offset={-80} smooth={true} duration={0} onClick={closeMenu}> Sobre mi</Link>
                 <Link to="proyects" spy={true} offset={-80} smooth={true} duration={0} onClick={closeMenu}> Proyectos</Link>
                 <Link to="tecnologies" spy={true} offset={-80} smooth={true} duration={0} onClick={closeMenu}> Tecnologías </Link> 
-                <i className="fa-solid fa-xmark" id="close" onClick={closeMenu}></i>
             </Links>
         </HeaderWrapper>
     )
@@ -59,20 +63,85 @@ const HeaderWrapper = styled.div`
     backdrop-filter: blur(12px);
     z-index: 9999;
 
-    & > i{
+    & > #menuIcon{
         display: none;
-        font-size: 2rem;
-        color: hsl(0, 90%, 65%);
-    }
-
-    @media screen and (max-width: 1050px){
-        height: 8vh;
-
-        & > i{
+        width: 60px;
+        height: 24px;
+        position: relative;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+    
+        & > span {
             display: block;
-            
+            position: absolute;
+            height: 2px;
+            width: 60%;
+            background: #d3531a;
+            border-radius: 9px;
+            opacity: 1;
+            right: 0;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: .25s ease-in-out;
+            -moz-transition: .25s ease-in-out;
+            -o-transition: .25s ease-in-out;
+            transition: .25s ease-in-out;
         }
+
+        & span:nth-child(1) {
+            top: 0px;
+        }
+    
+        & > span:nth-child(2), span:nth-child(3) {
+            top: 12px;
+        }
+        
+        & > span:nth-child(4) {
+            top: 24px;
+        }
+
+        &.active{
+            & > span:nth-child(1) {
+                top: 18px;
+                width: 0%;
+                left: 50%;
+            }
+
+            & > span:nth-child(2) {
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+
+            & > span:nth-child(3) {
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+
+            & > span:nth-child(4) {
+                top: 18px;
+                width: 0%;
+                left: 50%;
+            }
+        }
+
+        @media screen and (max-width: 1050px){
+            display: block;
+        } 
     }
+
 `
 const Logo = styled.div`
     width: 10%;
@@ -107,37 +176,28 @@ const Links = styled.div`
         }
     }
 
-    & > #close{
-        display: none;
-        position: absolute;
-        top: 20px;
-        right: 46px;    
-        font-size: 38px;
-    }
-
-    &.active > #close{
-        display: block;
-    }
-
     @media screen and (max-width: 1050px){
-        display: none;
         width: 100vw;
-        height: 101vh;
+        height: 40vh;
         position: fixed;
-        transition: 4s transform ease;
+        align-self: center;
+        transition: 1s transform ease;
         transform: translateY(-100%);
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        color: hsl(0, 90%, 65%);
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 0 0 15px 15px;
+        z-index: -9999;
+        box-shadow:
+            6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+            22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+            100px 100px 80px rgba(0, 0, 0, 0.07);
         
         &.active{
-            display: flex;
-            flex-direction: column;
-            background-color: white;
-            color: hsl(0, 90%, 65%);
-            justify-content: space-around;
-            align-items: center;
-            top: 0rem;
-            position: fixed;
-            overflow: hidden;
-            transform: translateY(0);
+            transform: translateY(23vh);
         }
     }
 `

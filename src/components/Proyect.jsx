@@ -44,12 +44,17 @@ const Photo = styled.div`
   height: 200px;
   transition: all ease 1s;
   box-shadow:
-  2.1px 2px 28.7px rgba(0, 0, 0, 0.02),
-  5.1px 4.7px 39.1px rgba(0, 0, 0, 0.028),
-  9.6px 8.9px 44px rgba(0, 0, 0, 0.035),
-  17.2px 15.9px 47.6px rgba(0, 0, 0, 0.042),
-  32.2px 29.7px 53.7px rgba(0, 0, 0, 0.05),
-  77px 71px 80px rgba(0, 0, 0, 0.07);
+    2.1px 2px 28.7px rgba(0, 0, 0, 0.02),
+    5.1px 4.7px 39.1px rgba(0, 0, 0, 0.028),
+    9.6px 8.9px 44px rgba(0, 0, 0, 0.035),
+    17.2px 15.9px 47.6px rgba(0, 0, 0, 0.042),
+    32.2px 29.7px 53.7px rgba(0, 0, 0, 0.05),
+    77px 71px 80px rgba(0, 0, 0, 0.07);
+
+  @media screen and (max-width: 1050px){
+    width: 100%;
+    background-position: center;
+  }
 
 `
 const Card = styled.div`
@@ -119,6 +124,10 @@ const Card = styled.div`
       margin: 3px 5px;
       border-radius: 20px;
     }
+
+    @media screen and (max-width: 1050px){
+      width: 100%;
+    }
   }
 `
 
@@ -137,5 +146,12 @@ const ProyectContent = styled.div`
     ${Card} {
       height: 16rem;
     }
+  }
+
+  @media screen and (max-width: 1050px){
+    width: 70vw;
+  }
+  @media screen and (max-width: 500px){
+    width: 90vw;
   }
 `

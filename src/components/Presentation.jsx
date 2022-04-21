@@ -68,6 +68,7 @@ const Content = styled.div`
     }
 
     @media screen and (max-width: 1050px){
+        flex-direction: column;
         & > .image{
             width: 14rem;
             height: 14rem;
@@ -76,18 +77,7 @@ const Content = styled.div`
     }
 
     @media screen and (max-width: 800px){
-        flex-direction: column;
     
-        & > .image{
-            width: 16rem;
-            height: 16rem;
-            margin: 18rem 0 2rem 0;
-        }
-    }
-
-    @media screen and (max-width: 800px) and (max-height: 700px){
-        flex-direction: row;
-
         & > .image{
             width: 16rem;
             height: 16rem;
@@ -137,7 +127,7 @@ const Description = styled.div`
     }
 
     @media screen and (max-width: 1050px){
-        margin-top: -1rem;
+        
         & > #sayHi{
             font-size: 1.6rem;
         }
@@ -148,12 +138,12 @@ const Description = styled.div`
     }
 
     @media screen and (max-width: 800px){
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         width: 70vw;
         margin: 2rem;
 
         & > #sayHi{
-            font-size: 1.8rem;
+            font-size: 1.2rem;
         }
     }
 `;
@@ -170,7 +160,7 @@ const Hi = styled.div`
     }
 
     @media screen and (max-width: 1050px){
-        font-size: 1.2rem;
+        font-size: .8rem;
         width: 80vw;
 
         & > button{
@@ -178,10 +168,6 @@ const Hi = styled.div`
             padding: 1.2rem;
             margin-top: 1rem;
         }
-    }
-
-    @media screen and (max-width: 800px){
-    
     }
 `;
 
@@ -199,12 +185,18 @@ const DownloadButton = styled.button`
         0 22.3px 17.9px rgba(0, 0, 0, 0.042),
         0 100px 80px rgba(0, 0, 0, 0.07);
 
-        & > svg{
-            margin-left: 0.6rem;
-        }
+    & > svg{
+        margin-left: 0.6rem;
+    }
 
-        &:hover{
-            background-color: hsl(0, 90%, 65%);
-            color: white;
-        }
+    &:hover{
+        background-color: hsl(0, 90%, 65%);
+        color: white;
+    }
+
+    @media screen and (max-width: 1050px){
+        padding: 1rem;
+        font-size: 1rem;
+
+    }
 `;

@@ -39,12 +39,13 @@ const TecnologyWrapper = styled.div`
         0 6.7px 5.3px rgba(0, 0, 0, 0.044),
         0 22.3px 17.9px rgba(0, 0, 0, 0.066);
     }
+    
 `;
 
 const Info = styled.div`
   display: flex;
   flex-direction: column;
-  text-align: left;
+  text-align: center;
   width: 60%;
   color: #616161;
 

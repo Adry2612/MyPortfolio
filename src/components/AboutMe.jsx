@@ -103,7 +103,7 @@ const Presentation = styled.div`
     margin-bottom: 2rem;
 
     & > .title{
-        font-size: 8.3rem;
+        font-size: clamp(5rem, 2.5vw, 7rem);
         color: hsl(0, 90%, 65%);
         opacity: 0.7;
         font-family: 'Grape Nuts', cursive;
@@ -122,13 +122,12 @@ const Presentation = styled.div`
     & > p{
         width: 80%;
         color: hsl(216, 15%, 52%);
-        font-size: 1.4rem;
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
         line-height: 2.3rem;
     }
 
     @media screen and (max-width: 1050px){
         & > p{
-            font-size: 1.2rem;
             line-height: 2.4rem;
         }
     }
