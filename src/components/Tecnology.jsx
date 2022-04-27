@@ -5,7 +5,7 @@ export default function Tecnology({nombre, description, learned, category, icon}
 
   return (
     <TecnologyWrapper>
-      <img src={`https://adrian-vidal-portfolio-api.herokuapp.com/api/get-image/${icon}`} alt="" />
+      <img src={`https://portfolio-api-one.vercel.app/api/get-image/${icon}`} alt="" />
 
       <Info> 
         <span className='title'> {nombre} </span>

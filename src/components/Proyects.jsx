@@ -8,7 +8,7 @@ export default function Proyects() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://adrian-vidal-portfolio-api.herokuapp.com/api/proyects')
+    fetch('https://portfolio-api-one.vercel.app/api/proyects')
       .then(res => res.json())
       .then(data => {
         setProyects(data);
