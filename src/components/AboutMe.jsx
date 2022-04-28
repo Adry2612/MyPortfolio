@@ -95,6 +95,10 @@ const AboutMeContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 1050px){
+        margin-top: 4rem;
+    }
 `
 const Presentation = styled.div`
     display: flex;

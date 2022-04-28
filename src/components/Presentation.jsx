@@ -138,7 +138,6 @@ const Description = styled.div`
     }
 
     @media screen and (max-width: 800px){
-        font-size: 1.2rem;
         width: 70vw;
         margin: 2rem;
 
@@ -150,7 +149,7 @@ const Description = styled.div`
 
 const Hi = styled.div`
     margin-top: 1rem;
-
+    font-size: clamp(1rem, 1.6vw, 2rem);
     & > .myName{
         font-weight: bold;
     }
@@ -160,7 +159,6 @@ const Hi = styled.div`
     }
 
     @media screen and (max-width: 1050px){
-        font-size: .8rem;
         width: 80vw;
 
         & > button{
