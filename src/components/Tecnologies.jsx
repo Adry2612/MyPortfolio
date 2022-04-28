@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import Tecnology from './Tecnology';
-
+import TecnologySkeleton from './TecnologySkeleton';
 export default function Tecnologies() {
   const [tecnologies, setTecnologies] = useState([]);
   const [selectedTecnologies, setSelectedTecnologies] = useState([]);
@@ -90,7 +90,7 @@ export default function Tecnologies() {
 
     <AllTecnologies>
       { isLoading ? 
-      <p> Aqui no hay na </p>
+        <TecnologySkeleton />
       : (
           tecnologies.map((tecno) => 
             <Tecnology key={tecno.name}

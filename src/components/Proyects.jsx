@@ -2,6 +2,7 @@ import React , {useEffect, useState} from 'react'
 import styled from 'styled-components';
 
 import Proyect from './Proyect';
+import ProyectSkeleton from './ProjectSkeleton';
 
 export default function Proyects() {
   const [proyects, setProyects] = useState([]);
@@ -32,16 +33,17 @@ export default function Proyects() {
       </Presentation>
 
       <Container>
-      {
-        proyects.map((proyect) => 
-          <Proyect 
-            name={proyect.name}
-            image={proyect.img} 
-            deploy={proyect.deploy_url} 
-            repo={proyect.repo_url} 
-            labels={proyect.labels}   
-          /> 
-        )
+      { isLoading 
+        ?  <ProyectSkeleton />
+        : proyects.map((proyect) => 
+            <Proyect 
+              name={proyect.name}
+              image={proyect.img} 
+              deploy={proyect.deploy_url} 
+              repo={proyect.repo_url} 
+              labels={proyect.labels}   
+            /> 
+          )
       }
       </Container>
     </ProyectsPage>

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 
 import Experience from './Experience';
+import ExperienceSkeleton from './ExperienceSkeleton';
 
 export default function AboutMe() {
     const [educations, setEducations] = useState([]);    
@@ -17,7 +18,7 @@ export default function AboutMe() {
             .then(res => res.json())
             .then(data => setJobs(data))
     
-        setIsLoading(false);
+        jobs && educations ? setIsLoading(false) : setIsLoading(true);
     }, [])
     
   return (
@@ -41,7 +42,7 @@ export default function AboutMe() {
                 <span className="decoration"> </span>
 
                 { isLoading 
-                    ?  <p> Mal </p>
+                    ?  <ExperienceSkeleton />
                     : jobs.map((job) => (
                         <Experience
                             type="job" 
@@ -68,7 +69,7 @@ export default function AboutMe() {
                 <span className="decoration"> </span>
 
                 { isLoading 
-                    ?  <p> Mal </p>
+                    ?  <ExperienceSkeleton />
                     : educations.map((education) => (
                         <Experience
                             type="education" 
