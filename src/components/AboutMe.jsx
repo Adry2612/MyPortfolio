@@ -10,11 +10,11 @@ export default function AboutMe() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch("https://portfolio-api-one.vercel.app/api/education")
+        fetch("https://adrian-vidal-portfolio-api.herokuapp.com/api/education")
             .then(res => res.json())
             .then(data => setEducations(data))
 
-        fetch("https://portfolio-api-one.vercel.app/api/jobs")
+        fetch("https://adrian-vidal-portfolio-api.herokuapp.com/api/jobs")
             .then(res => res.json())
             .then(data => setJobs(data))
     

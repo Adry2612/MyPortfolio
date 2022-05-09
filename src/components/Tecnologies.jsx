@@ -9,7 +9,7 @@ export default function Tecnologies() {
 
   useEffect(() => {
     
-    fetch('https://portfolio-api-one.vercel.app/api/tecnologies')
+    fetch('https://adrian-vidal-portfolio-api.herokuapp.com/api/tecnologies')
       .then(res => res.json())
       .then(data => {
         setSelectedTecnologies(data);

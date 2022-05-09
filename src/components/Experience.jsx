@@ -5,8 +5,8 @@ export default function Experience({type, name, icon, startDate, endDate, descri
     return (
         <Card>
             { type === "job" 
-                ?  ( <img src={`https://portfolio-api-one.vercel.app/api/get-jobs-image/${icon}`} alt="" /> ) 
-                : ( <img src={`https://portfolio-api-one.vercel.app/api/get-education-images/${icon}`} alt="" /> )
+                ?  ( <img src={`https://adrian-vidal-portfolio-api.herokuapp.com/api/get-jobs-image/${icon}`} alt="" /> ) 
+                : ( <img src={`https://adrian-vidal-portfolio-api.herokuapp.com/api/get-education-images/${icon}`} alt="" /> )
             }
             <div className="content">
                 <span> <p className="name"> {name} </p> <p className="date"> {startDate} - {endDate} </p> </span>
