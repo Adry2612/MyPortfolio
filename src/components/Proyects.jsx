@@ -9,7 +9,7 @@ export default function Proyects() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://adrian-vidal-portfolio-api.herokuapp.com/api/proyects')
+    fetch('https://adrianvidalportfolioapi.up.railway.app/api/proyects')
       .then(res => res.json())
       .then(data => {
         setProyects(data);

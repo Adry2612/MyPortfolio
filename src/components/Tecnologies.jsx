@@ -9,7 +9,7 @@ export default function Tecnologies() {
 
   useEffect(() => {
     
-    fetch('https://adrian-vidal-portfolio-api.herokuapp.com/api/tecnologies')
+    fetch('https://adrianvidalportfolioapi.up.railway.app/api/tecnologies')
       .then(res => res.json())
       .then(data => {
         setSelectedTecnologies(data);
