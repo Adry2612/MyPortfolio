@@ -46,13 +46,13 @@ const TecnologyWrapper = styled.div`
     }
 
     & .skeleton-text{
-        width: 100%;
+        max-width: 80%;
         height: .5rem;
         border-radius: .125rem;
         margin-bottom: 0.2rem;
 
         &:last-child{
-            width: 15rem;
+            max-width: 100%;
         }
     }
     

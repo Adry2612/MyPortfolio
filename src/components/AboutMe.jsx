@@ -33,11 +33,11 @@ export default function AboutMe() {
         <Content>
             <ExperienceBox className='Work'>
                 <span className="title">
-                Trayectoria Profesional
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-briefcase-fill" viewBox="0 0 16 16">
                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
                     <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
                 </svg>
+                Trayectoria Profesional
                 </span>
                 <span className="decoration"> </span>
 
@@ -61,12 +61,12 @@ export default function AboutMe() {
 
             <ExperienceBox className='Education'>
                 <span className="title">
-                    Estudios
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-book-fill" viewBox="0 0 16 16">
                     <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
                     </svg>
-                </span>
+                    Estudios
                 <span className="decoration"> </span>
+                </span>
 
                 { isLoading 
                     ?  <ExperienceSkeleton />
@@ -173,19 +173,28 @@ const ExperienceBox = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5rem;
  
     & > .title{
         color: black;
         width: 1000px;
         align-self: left;
-        font-size: 1.6rem;
+        font-size: 2.6rem;
         text-align: left;
+        margin-bottom: 1rem;
+        font-family: 'Grape Nuts';
+        font-weight: bold;
+        /* opacity: 0.8; */
+        color: hsl(216, 15%, 52%);
+
 
         & > svg{
-            margin-left: 16px;
+            margin-right: 16px;
+            color: hsl(0, 90%, 65%);
 
         }
     }
+
     & > .decoration{
         color: black;
         width: 500px;

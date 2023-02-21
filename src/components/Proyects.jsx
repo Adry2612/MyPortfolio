@@ -14,7 +14,6 @@ export default function Proyects() {
       .then(data => {
         setProyects(data);
         setIsLoading(false)
-        
       })
       .catch(function(error){
         console.log(error);
@@ -34,7 +33,10 @@ export default function Proyects() {
 
       <Container>
       { isLoading 
-        ?  <ProyectSkeleton />
+        ?  <>
+            <ProyectSkeleton />
+            <ProyectSkeleton />
+          </>
         : proyects.map((proyect) => 
             <Proyect 
               name={proyect.name}

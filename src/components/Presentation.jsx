@@ -60,15 +60,18 @@ const Content = styled.div`
 
     & > .image{
         background-color: grey;
-        width: 25rem;
-        height: 25rem;
+        width: 30rem;
+        height: 35rem;
         object-fit: cover;
         border-radius: 5px;
         margin-left: 2rem;
+        top: 2rem;
+        position: relative;
     }
 
     @media screen and (max-width: 1050px){
         flex-direction: column;
+        
         & > .image{
             width: 14rem;
             height: 14rem;
@@ -79,15 +82,15 @@ const Content = styled.div`
     @media screen and (max-width: 800px){
     
         & > .image{
-            width: 16rem;
+            width: 30rem;
             height: 16rem;
-            margin: 18rem 0 2rem 0;
+            margin: 2rem 0 0 0;
         }
     }
 
     @media screen and (max-width: 600px){
         & > .image{
-            width: 14rem;
+            width: 22rem;
             height: 14rem;
             margin-top: 8rem;
         }

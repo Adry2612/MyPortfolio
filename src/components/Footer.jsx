@@ -9,9 +9,9 @@ import email from '../assets/social/email.svg';
 export default function Footer() {
   return (
     <FooterWrapper>
-        <span> © 2021 Adrián Vidal López </span>
+        <span> © 2023 Adrián Vidal López </span>
         <div className="social">
-            <a href="https://github.com/Adry2612">
+            <a href="https://github`.com/Adry2612">
                 <img src={github} alt="Github" />
             </a>
             <a href="https://linkedin.com/in/adrian-vidal-lopez-812b4b187">

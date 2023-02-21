@@ -34,12 +34,14 @@ const Card = styled.div`
     border-radius: 5px;
     color: #616161;
     transition: 0.3s all ease;
+    padding: 1rem;
 
     & > .img{
         width: 6rem;
         height: 6rem;
         margin: 0 2rem 0 1rem;
         background-color: red;
+        border-radius: 5px;
     }
 
     & > .content{

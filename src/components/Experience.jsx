@@ -9,11 +9,11 @@ export default function Experience({type, name, icon, startDate, endDate, descri
                 : ( <img src={`https://adrianvidalportfolioapi.up.railway.app/api/get-education-images/${icon}`} alt="" /> )
             }
             <div className="content">
-                <span> <p className="name"> {name} </p> <p className="date"> {startDate} - {endDate} </p> </span>
+                <span> <p className="name"> {name} </p> </span>
 
                 <p className="spendWork"> {description} </p>
                 {
-                    tecnologies != '' 
+                    tecnologies !== '' 
                     ? (
                         <ul>
                             { tecnologies.map((tecno) => 
@@ -25,6 +25,20 @@ export default function Experience({type, name, icon, startDate, endDate, descri
                     : ''
                 } 
             </div>
+
+            <span className='timeline'/>
+            <span className='time'>
+                {startDate}
+            </span>
+            
+            { 
+                endDate ? (
+                <span className='time endDate'>
+                    {endDate}
+                </span>
+                ) : ''
+            }
+            
         </Card>
     )
 }
@@ -35,23 +49,85 @@ const Card = styled.div`
     background-color: #fff;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     border: 1px solid #EDF2F7;
     border-radius: 5px;
     color: #616161;
+    position: relative;
 
-    & > img{
-        width: 6rem;
-        height: 6rem;
-        margin: 0 2rem 0 1rem;
+    & > .timeline {
+        content: "";
+        display: block;
+        width: 0;
+        height: 100%;
+        border: 1px solid hsl(0, 90%, 65%);
+        position: absolute;
+        left: -50px;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 20%;
+            background: white;
+            border: 2px solid hsl(0, 90%, 65%);
+            position: absolute;
+            left: -17.5px;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 20%;
+            background: white;
+            border: 2px solid hsl(0, 90%, 65%);
+            position: absolute;
+            left: -17.5px;
+            top: -34px;
+        }
+
+        &:after {
+            top: 100%;
+            z-index: 5;
+        }
     }
 
-    & > .content{
+    & > .time {
+        width: 4rem;
+        position: absolute;
+        left: -150px;
+        color: hsl(0, 90%, 65%);
+        font-size: 80%;
+        font-weight: bold;
+        top: 100%;
+        text-align: end;
+
+    }
+    
+    & .endDate{
+        top: -25px;
+        width: 4rem;
+    }
+
+        & > img {
+            width: 7rem;
+            height: 7rem;
+            align-self: center;
+            justify-self: center;
+        }
+    
+
+    & > .content {
         display: flex;
         flex-direction: column;
+        padding: 1rem;
+        width: 50%;
 
-        & > span{
+        & > span {
             width: 100%;
             display: flex;
             align-items: center;
@@ -59,7 +135,7 @@ const Card = styled.div`
             gap: 6rem;
             font-size: 1rem;
 
-            & > .name{
+            & > .name {
                 color: hsl(0, 90%, 65%);
                 font-size: 1.6rem;
                 text-align: left;
@@ -70,6 +146,10 @@ const Card = styled.div`
             display: flex;
             justify-content: space-evenly;
             list-style-type: none;
+            width: 80%;
+            flex-wrap: wrap;
+            gap: .5rem;
+
 
             & > li{
                 padding: 0.3rem;
@@ -82,23 +162,24 @@ const Card = styled.div`
 
         & > .spendWork{
             font-size: 1rem;
-            align-self: flex-start;
-            justify-self: flex-start;
+            align-self: center;
+            justify-self: center;
             margin-top: -1rem;
         }
     }
     
     @media screen and (max-width: 1050px){
-        width: 80%;
+        width: 60%;
         padding: 1rem;
+        right: -3rem;
 
         & > img{
-            width: 4rem;
-            height: 4rem;
-            margin: 0 2rem 0 1rem;
+            width: 5rem;
+            height: 5rem;
         }
 
         & > .content{
+            
             & > span{
                 gap: 1rem;
                 font-size: 1rem;
@@ -107,7 +188,6 @@ const Card = styled.div`
             & > ul{
                 display: flex;
                 justify-content: space-evenly;
-                flex-flow: row wrap;
                 gap: 0.5rem;
 
                 & > li{
@@ -121,20 +201,23 @@ const Card = styled.div`
     }
 
     @media screen and (max-width: 500px){
-        width: 80vw;
+        width: 45vw;
         padding: 1rem;
         flex-direction: column;
 
         & > img{
             width: 4rem;
             height: 4rem;
-            margin: 0 2rem 0 1rem;
         }
 
         & > .content{
             & > span{
                 gap: 1rem;
                 font-size: 1rem;
+            }
+
+            & > .name {
+                text-align: center;
             }
 
             & > ul{
