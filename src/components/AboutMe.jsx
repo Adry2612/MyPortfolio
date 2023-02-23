@@ -10,11 +10,11 @@ export default function AboutMe() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch("https://adrianvidalportfolioapi.up.railway.app/api/education")
+        fetch("https://portfolio-api-5v66.onrender.com/api/education")
             .then(res => res.json())
             .then(data => setEducations(data))
 
-        fetch("https://adrianvidalportfolioapi.up.railway.app/api/jobs")
+        fetch("https://portfolio-api-5v66.onrender.com/api/jobs")
             .then(res => res.json())
             .then(data => setJobs(data))
     

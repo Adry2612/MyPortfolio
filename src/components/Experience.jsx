@@ -5,8 +5,8 @@ export default function Experience({type, name, icon, startDate, endDate, descri
     return (
         <Card>
             { type === "job" 
-                ?  ( <img src={`https://adrianvidalportfolioapi.up.railway.app/api/get-jobs-image/${icon}`} alt="" /> ) 
-                : ( <img src={`https://adrianvidalportfolioapi.up.railway.app/api/get-education-images/${icon}`} alt="" /> )
+                ?  ( <img src={`https://portfolio-api-5v66.onrender.com/api/get-jobs-image/${icon}`} alt="" /> ) 
+                : ( <img src={`https://portfolio-api-5v66.onrender.com/api/get-education-images/${icon}`} alt="" /> )
             }
             <div className="content">
                 <span> <p className="name"> {name} </p> </span>

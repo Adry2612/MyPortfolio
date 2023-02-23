@@ -9,7 +9,7 @@ export default function Tecnologies() {
 
   useEffect(() => {
     
-    fetch('https://adrianvidalportfolioapi.up.railway.app/api/tecnologies')
+    fetch('https://portfolio-api-5v66.onrender.com/api/tecnologies')
       .then(res => res.json())
       .then(data => {
         setSelectedTecnologies(data);

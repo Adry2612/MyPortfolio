@@ -8,7 +8,7 @@ export default function Proyect({name, image, deploy, repo, labels}) {
 
   return (
     <ProyectContent onClick={openAccordion}>
-        <Photo img={`https://adrianvidalportfolioapi.up.railway.app/api/get-proyect-images/${image}`}/>
+        <Photo img={`https://portfolio-api-5v66.onrender.com/api/get-proyect-images/${image}`}/>
 
         <Card>
             <h1> {name} </h1>

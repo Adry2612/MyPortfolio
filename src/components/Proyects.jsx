@@ -9,7 +9,7 @@ export default function Proyects() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://adrianvidalportfolioapi.up.railway.app/api/proyects')
+    fetch('https://portfolio-api-5v66.onrender.com/api/proyects')
       .then(res => res.json())
       .then(data => {
         setProyects(data);

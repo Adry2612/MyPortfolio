@@ -5,7 +5,7 @@ export default function Tecnology({nombre, description, learned, category, icon}
 
   return (
     <TecnologyWrapper>
-      <img src={`https://adrianvidalportfolioapi.up.railway.app/api/get-image/${icon}`} alt="" />
+      <img src={`https://portfolio-api-5v66.onrender.com/api/get-image/${icon}`} alt="" />
 
       <Info> 
         <span className='title'> {nombre} </span>
