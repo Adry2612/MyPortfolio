@@ -2,12 +2,11 @@ import React from 'react'
 import styled from 'styled-components';
 
 export default function TecnologySkeleton() {
-
   return (
     <TecnologyWrapper>
-      <div className='img skeleton'/>
+      <div className='img skeleton' />
 
-      <Info> 
+      <Info>
         <span className='title skeleton skeleton-text' />
         <span className='title skeleton skeleton-text' />
       </Info>

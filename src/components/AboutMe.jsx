@@ -1,13 +1,14 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import Experience from './Experience';
 import ExperienceSkeleton from './ExperienceSkeleton';
 
 export default function AboutMe() {
-    const [educations, setEducations] = useState([]);    
+    const [educations, setEducations] = useState([]);
     const [jobs, setJobs] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoadingJobs, setIsLoadingJobs] = useState(true);
+    const [isLoadingEducations, setIsLoadingEducations] = useState(true);
 
     useEffect(() => {
         fetch("https://portfolio-api-5v66.onrender.com/api/education")
@@ -17,76 +18,75 @@ export default function AboutMe() {
         fetch("https://portfolio-api-5v66.onrender.com/api/jobs")
             .then(res => res.json())
             .then(data => setJobs(data))
-    
-        jobs && educations ? setIsLoading(false) : setIsLoading(true);
+
+        if (jobs) setIsLoadingJobs(false);
+        if (educations) setIsLoadingEducations(false);
     }, [])
-    
-  return (
-    <AboutMeContainer id="about">
-        <Presentation>
-            <span className="title"> Sobre mi </span>
-            <span className="decoration"> </span>
 
-            <p> Tengo 23 años y soy amante del desarrollo web, el diseño y la seguridad informática. Aunque con poca trayectoria profesional, mi objetivo es no parar de aprender y ser un mejor desarrollador.</p>
-        </Presentation>
-
-        <Content>
-            <ExperienceBox className='Work'>
-                <span className="title">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-briefcase-fill" viewBox="0 0 16 16">
-                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
-                    <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
-                </svg>
-                Trayectoria Profesional
-                </span>
+    return (
+        <AboutMeContainer id="about">
+            <Presentation>
+                <span className="title"> Sobre mi </span>
                 <span className="decoration"> </span>
 
-                { isLoading 
-                    ?  <ExperienceSkeleton />
-                    : jobs.map((job) => (
-                        <Experience
-                            type="job" 
-                            name={job.name}
-                            icon={job.icon}
-                            startDate={job.startDate}
-                            endDate={job.endDate}
-                            description={job.description}
-                            tecnologies={job.tecnologies}
-                        />
-   
-                    ))
-                }
-                    
-            </ExperienceBox>
+                <p> Tengo 23 años y soy amante del desarrollo web, el diseño y la seguridad informática. Aunque con poca trayectoria profesional, mi objetivo es no parar de aprender y ser un mejor desarrollador.</p>
+            </Presentation>
 
-            <ExperienceBox className='Education'>
-                <span className="title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-book-fill" viewBox="0 0 16 16">
-                    <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
-                    </svg>
-                    Estudios
-                <span className="decoration"> </span>
-                </span>
+            <Content>
+                <ExperienceBox className='Work'>
+                    <span className="title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                            <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z" />
+                            <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" />
+                        </svg>
+                        Trayectoria Profesional
+                    </span>
+                    <span className="decoration"> </span>
 
-                { isLoading 
-                    ?  <ExperienceSkeleton />
-                    : educations.map((education) => (
-                        <Experience
-                            type="education" 
-                            name={education.name}
-                            icon={education.icon}
-                            startDate={education.startDate}
-                            endDate={education.endDate}
-                            description={education.description}
-                            tecnologies=''
-                        />
+                    {isLoadingJobs
+                        ? <ExperienceSkeleton />
+                        : jobs.map((job) => (
+                            <Experience
+                                type="job"
+                                name={job.name}
+                                icon={job.icon}
+                                startDate={job.startDate}
+                                endDate={job.endDate}
+                                description={job.description}
+                                tecnologies={job.tecnologies}
+                            />
+                        ))
+                    }
 
-                    ))
-                }  
-            </ExperienceBox>
-        </Content>
-    </AboutMeContainer>
-  )
+                </ExperienceBox>
+
+                <ExperienceBox className='Education'>
+                    <span className="title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-book-fill" viewBox="0 0 16 16">
+                            <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+                        </svg>
+                        Estudios
+                        <span className="decoration"> </span>
+                    </span>
+
+                    {isLoadingEducations
+                        ? <ExperienceSkeleton />
+                        : educations.map((education) => (
+                            <Experience
+                                type="education"
+                                name={education.name}
+                                icon={education.icon}
+                                startDate={education.startDate}
+                                endDate={education.endDate}
+                                description={education.description}
+                                tecnologies=''
+                            />
+                        ))
+                    }
+                </ExperienceBox>
+            </Content>
+        </AboutMeContainer>
+    )
 }
 
 const AboutMeContainer = styled.div`

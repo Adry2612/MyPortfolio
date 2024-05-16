@@ -1,37 +1,37 @@
 import React from 'react'
 import styled from 'styled-components';
 
-export default function Proyect({name, image, deploy, repo, labels}) {
-    const openAccordion = (e) => {
-        e.target.parentElement.classList.toggle('active')
-    }
+export default function Proyect({ name, image, deploy, repo, labels }) {
+  const openAccordion = (e) => {
+    e.target.parentElement.classList.toggle('active')
+  }
 
   return (
     <ProyectContent onClick={openAccordion}>
-        <Photo img={`https://portfolio-api-5v66.onrender.com/api/get-proyect-images/${image}`}/>
+      <Photo img={`https://portfolio-api-5v66.onrender.com/api/get-proyect-images/${image}`} />
 
-        <Card>
-            <h1> {name} </h1>
+      <Card>
+        <h1> {name} </h1>
 
-            <div className='links'>
-            {deploy != '' ? (
-                <a href={deploy}> 
-                    <i className="fa-solid fa-arrow-pointer"></i> Ver despliegue
-                </a>
-            ) : '' }
-            {repo != '' ? (
-                <a href={repo}>  
-                    <i className="fa-brands fa-github"></i> Ver repositorio 
-                </a>
-            ) : '' }
-            </div>
+        <div className='links'>
+          {deploy != '' ? (
+            <a href={deploy}>
+              <i className="fa-solid fa-arrow-pointer"></i> Ver despliegue
+            </a>
+          ) : ''}
+          {repo != '' ? (
+            <a href={repo}>
+              <i className="fa-brands fa-github"></i> Ver repositorio
+            </a>
+          ) : ''}
+        </div>
 
-            <span/>
-            
-            <div className='labels'>
-                {labels.split(',').map((label) => <p> {label} </p>)}
-            </div>
-        </Card>
+        <span />
+
+        <div className='labels'>
+          {labels.split(',').map((label) => <p> {label} </p>)}
+        </div>
+      </Card>
     </ProyectContent>
   )
 }
@@ -137,6 +137,7 @@ const ProyectContent = styled.div`
   margin-bottom: 50px;
   width: 400px;
   z-index: 9998;
+  cursor: pointer;
 
   &.active {
     ${Photo}{
